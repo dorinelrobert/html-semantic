@@ -1,10 +1,203 @@
-<html>
+<!doctype html>
+<html lang="en">
     <head>
-        <title></title>
-        <link rel="stylesheet" href="">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Home - Ancient Cedars Spa</title>
+        <meta name="description" content="Nestled in at ocean level and sheltered by the old growth forest fringe, our oceanfront Tofino spa is a haven of massage, skin & steam treatment relaxation.">
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
+        
+        <link rel="stylesheet" href="css/style.css">
+        <script src="js/some-plugin.js"></script>
     </head>
     <body>
-        
-        <script src=""></script>
+        <a id="skip-to-content" href="#page-content">skip to main content</a>
+        <nav aria-label="Main Navigation">
+            <a href="index.html" rel="home">
+                <img src="images/logo.png" alt="Ancient Cedars Spa Logo">
+            </a>
+            <ul role="menubar">
+                <li>
+                    <a href="index.html" role="menuitem" aria-current="page">Home</a>
+                </li>
+                <li>
+                    <a href="about.html" role="menuitem">About</a>
+                </li>
+                <li>
+                    <a href="spa-packages.html" role="menuitem">Spa Packages</a>
+                </li>
+                <li >
+                    <a href="contact.html" role="menuitem">Contact</a>
+                </li>
+            </ul>
+        </nav>
+        <header>
+            <h1>Relaxation & Wellness</h1>
+        </header>
+        <main id="page-content" aria-label="Main Content" tabindex="-1">
+            <article>
+                <aside>
+                    <img src="images/side_by_side_massage_anthony_redpath.560x390.jpg" alt="Couple Treatment Ancient Cedars Spa">
+                </aside>
+                <h2>Treatments</h2>
+                <p>
+                    Soothe, brighten, pamper. Select a way to nourish yourself from our menu of treatment offerings.
+                </p>
+                <p>
+                    Find sanctuary at our Ancient Cedars Spa. Nestled into the ocean level of the Pointe Building 
+                    and sheltered by the forest fringe, the Spa is a haven of relaxation and rejuvenation. With views 
+                    cast out towards the Pacific, we integrate our idyllic natural surroundings into the healing 
+                    treatments and exceptional care we offer for your body and mind.
+                </p>
+                <aside>
+                    <h3>What our clients are saying</h3>
+                    <blockquote>
+                        <p>
+                            Our recent stay at Ancient Cedars Spa was very pleasant as usual... The Spa treatments 
+                            we had were done by true professionals and executed like no others.
+                        </p>
+                        <footer>
+                            <cite>Jane Said on <a href="https://www.tripadvisor.com/something">tripadvisor</a></cite>
+                        </footer>
+                    </blockquote>
+                </aside>
+                <p>
+                    <a href="about.html">Discover Our Treatments and Rates</a>
+                </p>
+            </article>
+            <article>
+                <aside>
+                    <img src="images/mens_facial_anthony_redpath.560x390.jpg" alt="Mens Facial Ancient Cedars Spa">
+                </aside>
+                <h2>Spa Packages</h2>
+                <p>
+                    Our specialized accommodation packages offer curated treatment programs, ensuring ample time 
+                    for wellness amidst your other activi ties.
+                </p>
+                <p>
+                    <a href="spa-packeges.html">See all packages</a>
+                </p>
+            </article>
+        </main>
+        <aside>
+            <h2>Request your treatment</h2>
+            <form action="/treatment-request" method="post">
+                <div>
+                    <fieldset>
+                        <legend>Title</legend>
+                        <ul>
+                            <li>
+                                <label for="title-1">
+                                    <input type="radio" id="title-1" name="title" value="none" checked>
+                                    None
+                                </label>
+                            </li>
+                            <li>
+                                <label for="title-2">
+                                    <input type="radio" id="title-2" name="title" value="mr">
+                                    Mr.
+                                </label>
+                            </li>
+                            <li>
+                                <label for="title-3">
+                                    <input type="radio" id="title-3" name="title" value="mrs">
+                                    Mrs.
+                                </label>
+                            </li>
+                            <li>
+                                <label for="title-4">
+                                    <input type="radio" id="title-4" name="title" value="ms">
+                                    Ms.
+                                </label>
+                            </li>
+                        </ul>
+                    </fieldset>
+                </div>
+                <div>
+                    <label for="name">Name <abbr title="required">*</abbr></label>
+                    <input type="text" name="name" id="name" placeholder="Name" required>
+                </div>
+                <div>
+                    <label for="last-name">Last Name <abbr title="required">*</abbr></label>
+                    <input type="text" name="last-name" id="last-name" placeholder="Last Name" required>
+                </div>
+                <div>
+                    <label for="email">Email <abbr title="required">*</abbr></label>
+                    <input type="email" name="email" id="email" placeholder="username@example.com" required>
+                </div>
+                <div>
+                    <label for="phone">Phone <abbr title="required">*</abbr></label>
+                    <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890" required>
+                    <small>Format: 123-456-7890</small>
+                </div>
+                <div>
+                    <label for="treatment">Treatment</label>
+                    <select name="treatment" id="treatment">
+                        <option value="">Choose a treatment</option>
+                        <optgroup label="Signature Treatments">
+                            <option value="Hishuk Ish Tsawalk Awakening Experience $220">Hishuk Ish Tsawalk Awakening Experience $220</option>
+                            <option value="West Coast Sacred Sea Experience $220">West Coast Sacred Sea Experience $220</option>
+                            <option value="Lomi Lomi ($210)">Lomi Lomi ($210)</option>
+                            <option value="Detoxifying Mud Therapy $195">Detoxifying Mud Therapy $195</option>
+                            <option value="Ensuite Reflexology 1 hour $170">Ensuite Reflexology 1 hour $170</option>
+                            <option value="Sacred Nature Ritual $150">Sacred Nature Ritual $150</option>
+                            <option value="Cedar Escape $150">Cedar Escape $150</option>
+                        </optgroup>
+                        <optgroup label="Massage">
+                            <option value="Hot Stone Massage $210">Hot Stone Massage $210</option>
+                            <option value="Beach Ready Bliss 1.5 hours $195">Beach Ready Bliss 1.5 hours $195</option>
+                            <option value="Aromatic Massage 1.5 hours $185">Aromatic Massage 1.5 hours $185</option>
+                            <option value="Aromatic Massage 1 hour $140">Aromatic Massage 1 hour $140</option>
+                            <option value="Reflexology Acupressure 1 hour $140">Reflexology Acupressure 1 hour $140</option>
+                            <option value="Reflexology Acupressure 1.5 hours $185">Reflexology Acupressure 1.5 hours $185</option>
+                        </optgroup>
+                        <optgroup label="Hydrotherapy">
+                            <option value="Hydrofusion $75">Hydrofusion $75</option>
+                            <option value="Double Soaker Jetted Tub $55/pp">Double Soaker Jetted Tub $55/pp</option>
+                        </optgroup>
+                        <optgroup label="Skin Care">
+                            <option value="Hot Stone Facial $210">Hot Stone Facial $210</option>
+                            <option value="Self Renewal Face &amp; Body $165">Self Renewal Face &amp; Body $165</option>
+                            <option value="Sublime Skin Facial $155">Sublime Skin Facial $155</option>
+                            <option value="Active Pureness Facial $145">Active Pureness Facial $145</option>
+                            <option value="Men's Performance Facial $145">Men's Performance Facial $145</option>
+                            <option value="Hydramemory Facial $135">Hydramemory Facial $135</option>
+                            <option value="Organic Sea Facial $130">Organic Sea Facial $130</option>
+                            <option value="Pacific Sea Salt Glow $130">Pacific Sea Salt Glow $130</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <div>
+                    <label for="date">Date</label>
+                    <input type="date" name="date" id="date" min="2020-02-01">
+                </div>
+                <div>
+                    <label for="special-requests">Health concerns or special requests</label>
+                    <textarea id="special-requests" name="special-requests" placeholder="Fill this field with your special requests"></textarea>
+                </div>
+                <div>
+                    <input type="submit" value="Submit">
+                </div>
+            </form>
+        </aside>
+        <footer>
+            <h2>Find us on social media</h2>
+            <ul>
+                <li>
+                    <a href="https://www.facebook.com/WickInn/" target="_blank" title="facebook - Link opens in a new window">Facebook</a>
+                </li>
+                <li>
+                    <a href="https://twitter.com/wickinnbc" target="_blank" title="twitter - Link opens in a new window">Twitter</a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com/ancientcedarsspa/" target="_blank" title="instagram - Link opens in a new window">Instagram</a>
+                </li>
+            </ul>
+            <p>Copyright @2020 Ancient Cedars Spa. All rights reserved.</p>
+        </footer>
+        <script src="js/script.js"></script>
     </body>
 </html>
