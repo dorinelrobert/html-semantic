@@ -13,35 +13,61 @@
         <link rel="stylesheet" href="css/style.css">
         <script src="js/some-plugin.js"></script>
     </head>
-    <body>
-        <a id="skip-to-content" href="#page-content">skip to main content</a>
-        <nav aria-label="Main Navigation">
-            <a href="index.html" rel="home">
-                <img src="images/logo.png" alt="Ancient Cedars Spa Logo">
+    <body class="two-column-layout">
+        <a class="skip-to-content" href="#page-content">skip to main content</a>
+        <nav class="navbar" aria-label="Main Navigation">
+            <a class="logo" href="index.html">
+                <img class="logo__img" src="images/logo.png" alt="Ancient Cedars Spa Logo">
             </a>
-            <ul role="menubar">
-                <li>
-                    <a href="index.html" role="menuitem" aria-current="page">Home</a>
+            <ul class="navbar__menu" id="main-menu" role="menubar">
+                <li class="navbar__item" role="none presentation">
+                    <a class="navbar__link" href="index.html" role="menuitem" aria-current="page">Home</a>
                 </li>
-                <li>
-                    <a href="about.html" role="menuitem">About</a>
+                <li class="navbar__item" role="none presentation">
+                    <a class="navbar__link" href="about.html" role="menuitem">About</a>
                 </li>
-                <li>
-                    <a href="spa-packages.html" role="menuitem">Spa Packages</a>
+                <li class="navbar__item" role="none presentation">
+                    <a class="navbar__link" href="spa-packages.html" role="menuitem">Spa Packages</a>
                 </li>
-                <li >
-                    <a href="contact.html" role="menuitem">Contact</a>
+                <li class="navbar__item" role="none presentation">
+                    <a class="navbar__link" href="contact.html" role="menuitem">Contact</a>
                 </li>
             </ul>
+            <button 
+		        class="navbar__menu-toggle" 
+		        aria-controls="main-menu" 
+		        aria-expanded="false" 
+		        aria-label="Click here to toggle the navigation menu">
+	    	    Menu
+	        </button>
+            <form class="search" action="/search-action" method="get" role="search" >
+                <input 
+                    class="search__text"
+                    id="search-text" 
+                    list="search-suggetions"  
+                    name="q" 
+                    type="search" 
+                    value="" 
+                    size="34" 
+                    maxlength="170" 
+                    placeholder="Search on Ancient Cedars Spa"
+                    aria-label="Search text">
+                <datalist id="search-suggetions">
+                    <option value="About Ancient Cedars Spa">About Ancient Cedars Spa</option>
+                    <option value="Spa Packages">Spa Packages</option>
+                    <option value="Contact">Contact</option>
+                    <option value="Treatments Prices">Treatments Prices</option>
+                    <option value="Treatments">Treatments</option>
+                </datalist>
+                <input class="search__btn" type="submit" value="Submit">
+            </form>
         </nav>
-        <header>
-            <h1>Relaxation & Wellness</h1>
+        <header class="page-header" aria-labelledby="page-title">
+            <h1 class="page-header__title" id="page-title">Relaxation & Wellness</h1>
         </header>
-        <main id="page-content" aria-label="Main Content" tabindex="-1">
-            <article>
-                <aside>
-                    <img src="images/side_by_side_massage_anthony_redpath.560x390.jpg" alt="Couple Treatment Ancient Cedars Spa">
-                </aside>
+        <main class="page-content" id="page-content" aria-label="Main Content" tabindex="-1">
+            <article class="feature">
+                <img src="images/side_by_side_massage_anthony_redpath.560x390.jpg" alt="Couple Treatment Ancient Cedars Spa">
                 <h2>Treatments</h2>
                 <p>
                     Soothe, brighten, pamper. Select a way to nourish yourself from our menu of treatment offerings.
@@ -56,8 +82,9 @@
                     <h3>What our clients are saying</h3>
                     <blockquote>
                         <p>
-                            Our recent stay at Ancient Cedars Spa was very pleasant as usual... The Spa treatments 
-                            we had were done by true professionals and executed like no others.
+                            We just enjoyed our 18<sup>th</sup> celebration of our anniversary in your 
+                            beautiful resort... The Spa treatments we had were done by true professionals 
+                            and executed like no others.
                         </p>
                         <footer>
                             <cite>Jane Said on <a href="https://www.tripadvisor.com/something">tripadvisor</a></cite>
@@ -65,13 +92,11 @@
                     </blockquote>
                 </aside>
                 <p>
-                    <a href="about.html">Discover Our Treatments and Rates</a>
+                    <a class="button" href="about.html">Discover more about us</a>
                 </p>
             </article>
-            <article>
-                <aside>
-                    <img src="images/mens_facial_anthony_redpath.560x390.jpg" alt="Mens Facial Ancient Cedars Spa">
-                </aside>
+            <article class="feature">
+                <img src="images/mens_facial_anthony_redpath.560x390.jpg" alt="Mens Facial Ancient Cedars Spa">
                 <h2>Spa Packages</h2>
                 <p>
                     Our specialized accommodation packages offer curated treatment programs, ensuring ample time 
@@ -82,8 +107,8 @@
                 </p>
             </article>
         </main>
-        <aside>
-            <h2>Request your treatment</h2>
+        <aside class="page-sidebar">
+            <h2 class="page-sidebar__title">Request your treatment</h2>
             <form action="/treatment-request" method="post">
                 <div>
                     <fieldset>
@@ -118,19 +143,19 @@
                 </div>
                 <div>
                     <label for="name">Name <abbr title="required">*</abbr></label>
-                    <input type="text" name="name" id="name" placeholder="Name" required>
+                    <input type="text" name="name" id="name" placeholder="Name" aria-required="true" required>
                 </div>
                 <div>
                     <label for="last-name">Last Name <abbr title="required">*</abbr></label>
-                    <input type="text" name="last-name" id="last-name" placeholder="Last Name" required>
+                    <input type="text" name="last-name" id="last-name" placeholder="Last Name" aria-required="true" required>
                 </div>
                 <div>
                     <label for="email">Email <abbr title="required">*</abbr></label>
-                    <input type="email" name="email" id="email" placeholder="username@example.com" required>
+                    <input type="email" name="email" id="email" placeholder="username@example.com" aria-required="true" required>
                 </div>
                 <div>
                     <label for="phone">Phone <abbr title="required">*</abbr></label>
-                    <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890" required>
+                    <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890" aria-required="true" required>
                     <small>Format: 123-456-7890</small>
                 </div>
                 <div>
@@ -183,20 +208,47 @@
                 </div>
             </form>
         </aside>
-        <footer>
-            <h2>Find us on social media</h2>
-            <ul>
-                <li>
-                    <a href="https://www.facebook.com/WickInn/" target="_blank" title="facebook - Link opens in a new window">Facebook</a>
-                </li>
-                <li>
-                    <a href="https://twitter.com/wickinnbc" target="_blank" title="twitter - Link opens in a new window">Twitter</a>
-                </li>
-                <li>
-                    <a href="https://www.instagram.com/ancientcedarsspa/" target="_blank" title="instagram - Link opens in a new window">Instagram</a>
-                </li>
-            </ul>
-            <p>Copyright @2020 Ancient Cedars Spa. All rights reserved.</p>
+        <footer class="page-footer" aria-label="Footer">
+            <section class="footer-widget" aria-label="Find us on social media">
+                <h2 class="footer-widget__title">Find us on social media</h2>
+                <ul class="social-links">
+                    <li class="social-links_item">
+                        <a class="social-links_link" href="https://www.facebook.com/WickInn/" target="_blank" title="facebook - Link opens in a new window">Facebook</a>
+                    </li>
+                    <li class="social-links_item">
+                        <a class="social-links_link" href="https://twitter.com/wickinnbc" target="_blank" title="twitter - Link opens in a new window">Twitter</a>
+                    </li>
+                    <li class="social-links_item">
+                        <a class="social-links_link" href="https://www.instagram.com/ancientcedarsspa/" target="_blank" title="instagram - Link opens in a new window">Instagram</a>
+                    </li>
+                </ul>
+            </section>
+            <section class="footer-widget" aria-label="Report a problem or mistake on this page">
+                <details>
+                    <summary>
+                        Report a problem or mistake on this page
+                    </summary>
+                    <form action="/report-problem" method="post">
+                        <fieldset>
+                            <legend>Please select all that apply:</legend>
+                            <div>
+                                <label for="problem1">A link, button or video is not working</label>
+                                <input name="problem1" id="problem1" type="checkbox" value="Yes">
+                            </div>
+                            <div>
+                                <label for="problem2">It has a spelling mistake</label>
+                                <input name="problem2" id="problem2" type="checkbox" value="Yes">
+                            </div>
+                            <div>
+                                <label for="problem3">Information is missing</label>
+                                <input name="problem3" id="problem3" type="checkbox" value="Yes">
+                            </div>
+                        </fieldset>
+                        <button type="submit">Submit</button>
+                    </form>
+                </details>
+            </section>
+            <p class="copyright-text">Copyright @2020 Ancient Cedars Spa. All rights reserved.</p>
         </footer>
         <script src="js/script.js"></script>
     </body>

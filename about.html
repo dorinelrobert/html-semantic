@@ -14,31 +14,59 @@
         <script src="js/some-plugin.js"></script>
     </head>
     <body>
-        <a id="skip-to-content" href="#page-content">skip to main content</a>
-        <nav aria-label="Main Navigation">
-            <a href="index.html" rel="home">
-                <img src="images/logo.png" alt="Ancient Cedars Spa Logo">
+        <a class="skip-to-content" href="#page-content">skip to main content</a>
+        <nav class="navbar" aria-label="Main Navigation">
+            <a class="logo" href="index.html">
+                <img class="logo__img" src="images/logo.png" alt="Ancient Cedars Spa Logo">
             </a>
-            <ul role="menubar">
-                <li>
-                    <a href="index.html" role="menuitem">Home</a>
+            <ul class="navbar__menu" id="main-menu" role="menubar">
+                <li class="navbar__item" role="none presentation">
+                    <a class="navbar__link" href="index.html" role="menuitem">Home</a>
                 </li>
-                <li>
-                    <a href="about.html" role="menuitem" aria-current="page">About</a>
+                <li class="navbar__item" role="none presentation">
+                    <a class="navbar__link" href="about.html" role="menuitem" aria-current="page">About</a>
                 </li>
-                <li>
-                    <a href="spa-packages.html" role="menuitem">Spa Packages</a>
+                <li class="navbar__item" role="none presentation">
+                    <a class="navbar__link" href="spa-packages.html" role="menuitem">Spa Packages</a>
                 </li>
-                <li >
-                    <a href="contact.html" role="menuitem">Contact</a>
+                <li class="navbar__item" role="none presentation">
+                    <a class="navbar__link" href="contact.html" role="menuitem">Contact</a>
                 </li>
             </ul>
+            <button 
+		        class="navbar__menu-toggle" 
+		        aria-controls="main-menu" 
+		        aria-expanded="false" 
+		        aria-label="Click here to toggle the navigation menu">
+	    	    Menu
+	        </button>
+            <form class="search" action="/search-action" method="get" role="search" >
+                <input 
+                    class="search__text"
+                    id="search-text" 
+                    list="search-suggetions"  
+                    name="q" 
+                    type="search" 
+                    value="" 
+                    size="34" 
+                    maxlength="170" 
+                    placeholder="Search on Ancient Cedars Spa"
+                    aria-label="Search text">
+                <datalist id="search-suggetions">
+                    <option value="About Ancient Cedars Spa">About Ancient Cedars Spa</option>
+                    <option value="Spa Packages">Spa Packages</option>
+                    <option value="Contact">Contact</option>
+                    <option value="Treatments Prices">Treatments Prices</option>
+                    <option value="Treatments">Treatments</option>
+                </datalist>
+                <input class="search__btn" type="submit" value="Submit">
+            </form>
         </nav>
-        <header>
-            <h1>About Ancient Cedars Spa</h1>
+        <header class="page-header" aria-labelledby="page-title" >
+            <h1 class="page-header__title" id="page-title">About Ancient Cedars Spa</h1>
         </header>
-        <main id="page-content" aria-label="Main Content" tabindex="-1">
-            <article>
+        <main class="page-content" id="page-content" aria-label="Main Content" tabindex="-1">
+            <article class="single-post">
                 <h2>Find sanctuary at our Ancient Cedars Spa</h2>
                 <p>
                     Set on a rocky edge at the northern cape of Chesterman Beach, the Wickaninnish 
@@ -105,7 +133,7 @@
                 </section>
                 <section>
                     <h3>Spa Treatments &amp; Rates</h3>
-                    <table>
+                    <table class="table">
                         <caption>Prices available until <time datetime="2020-01-06">1 June 2020</time>. <a href="contact.html">Contact us</a> if you require any further information</caption>
                         <thead>
                             <tr>
@@ -218,20 +246,47 @@
                 </section>  
             </article>
         </main>
-        <footer>
-            <h2>Find us on social media</h2>
-            <ul>
-                <li>
-                    <a href="https://www.facebook.com/WickInn/" target="_blank" title="facebook - Link opens in a new window">Facebook</a>
-                </li>
-                <li>
-                    <a href="https://twitter.com/wickinnbc" target="_blank" title="twitter - Link opens in a new window">Twitter</a>
-                </li>
-                <li>
-                    <a href="https://www.instagram.com/ancientcedarsspa/" target="_blank" title="instagram - Link opens in a new window">Instagram</a>
-                </li>
-            </ul>
-            <p>Copyright @2020 Ancient Cedars Spa. All rights reserved.</p>
+        <footer class="page-footer" aria-label="Footer">
+            <section class="footer-widget" aria-label="Find us on social media">
+                <h2 class="footer-widget__title">Find us on social media</h2>
+                <ul class="social-links">
+                    <li class="social-links_item">
+                        <a class="social-links_link" href="https://www.facebook.com/WickInn/" target="_blank" title="facebook - Link opens in a new window">Facebook</a>
+                    </li>
+                    <li class="social-links_item">
+                        <a class="social-links_link" href="https://twitter.com/wickinnbc" target="_blank" title="twitter - Link opens in a new window">Twitter</a>
+                    </li>
+                    <li class="social-links_item">
+                        <a class="social-links_link" href="https://www.instagram.com/ancientcedarsspa/" target="_blank" title="instagram - Link opens in a new window">Instagram</a>
+                    </li>
+                </ul>
+            </section>
+            <section class="footer-widget" aria-label="Report a problem or mistake on this page">
+                <details>
+                    <summary>
+                        Report a problem or mistake on this page
+                    </summary>
+                    <form action="/report-problem" method="post">
+                        <fieldset>
+                            <legend>Please select all that apply:</legend>
+                            <div>
+                                <label for="problem1">A link, button or video is not working</label>
+                                <input name="problem1" id="problem1" type="checkbox" value="Yes">
+                            </div>
+                            <div>
+                                <label for="problem2">It has a spelling mistake</label>
+                                <input name="problem2" id="problem2" type="checkbox" value="Yes">
+                            </div>
+                            <div>
+                                <label for="problem3">Information is missing</label>
+                                <input name="problem3" id="problem3" type="checkbox" value="Yes">
+                            </div>
+                        </fieldset>
+                        <button type="submit">Submit</button>
+                    </form>
+                </details>
+            </section>
+            <p class="copyright-text">Copyright @2020 Ancient Cedars Spa. All rights reserved.</p>
         </footer>
         <script src="js/script.js"></script>
     </body>

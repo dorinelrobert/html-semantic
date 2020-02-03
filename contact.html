@@ -1,5 +1,4 @@
 <!doctype html>
-<!doctype html>
 <html lang="en">
     <head>
         <meta charset="utf-8">
@@ -14,31 +13,59 @@
         <link rel="stylesheet" href="css/style.css">
         <script src="js/some-plugin.js"></script>
     </head>
-    <body>
-        <a id="skip-to-content" href="#page-content">skip to main content</a>
-        <nav aria-label="Main Navigation">
-            <a href="index.html" rel="home">
-                <img src="images/logo.png" alt="Ancient Cedars Spa Logo">
+    <body class="two-column-layout">
+        <a class="skip-to-content" href="#page-content">skip to main content</a>
+        <nav class="navbar" aria-label="Main Navigation">
+            <a class="logo" href="index.html">
+                <img class="logo__img" src="images/logo.png" alt="Ancient Cedars Spa Logo">
             </a>
-            <ul role="menubar">
-                <li>
-                    <a href="index.html" role="menuitem" aria-current="page">Home</a>
+            <ul class="navbar__menu" id="main-menu" role="menubar">
+                <li class="navbar__item" role="none presentation">
+                    <a class="navbar__link" href="index.html" role="menuitem">Home</a>
                 </li>
-                <li>
-                    <a href="about.html" role="menuitem">About</a>
+                <li class="navbar__item" role="none presentation">
+                    <a class="navbar__link" href="about.html" role="menuitem">About</a>
                 </li>
-                <li>
-                    <a href="spa-packages.html" role="menuitem">Spa Packages</a>
+                <li class="navbar__item" role="none presentation">
+                    <a class="navbar__link" href="spa-packages.html" role="menuitem">Spa Packages</a>
                 </li>
-                <li >
-                    <a href="contact.html" role="menuitem">Contact</a>
+                <li class="navbar__item" role="none presentation">
+                    <a class="navbar__link" href="contact.html" role="menuitem" aria-current="page">Contact</a>
                 </li>
             </ul>
+            <button 
+		        class="navbar__menu-toggle" 
+		        aria-controls="main-menu" 
+		        aria-expanded="false" 
+		        aria-label="Click here to toggle the navigation menu">
+	    	    Menu
+	        </button>
+            <form class="search" action="/search-action" method="get" role="search" >
+                <input 
+                    class="search__text"
+                    id="search-text" 
+                    list="search-suggetions"  
+                    name="q" 
+                    type="search" 
+                    value="" 
+                    size="34" 
+                    maxlength="170" 
+                    placeholder="Search on Ancient Cedars Spa"
+                    aria-label="Search text">
+                <datalist id="search-suggetions">
+                    <option value="About Ancient Cedars Spa">About Ancient Cedars Spa</option>
+                    <option value="Spa Packages">Spa Packages</option>
+                    <option value="Contact">Contact</option>
+                    <option value="Treatments Prices">Treatments Prices</option>
+                    <option value="Treatments">Treatments</option>
+                </datalist>
+                <input class="search__btn" type="submit" value="Submit">
+            </form>
         </nav>
-        <header>
-            <h1>Contact Ancient Cedars Spa</h1>
+        <header class="page-header" aria-labelledby="page-title">
+            <h1 class="page-header__title" id="page-title">Contact Ancient Cedars Spa</h1>
         </header>
-        <main id="page-content" aria-label="Main Content">
+        <main class="page-content" id="page-content" aria-label="Main Content">
             <section>
                 <h2>Contact form</h2>
                 <p>
@@ -46,17 +73,22 @@
                     below or email us at your convenience.
                 </p>
                 <form action="/contact" method="post">
+                    <input type="hidden" name="csrf" value="qwertyuioplkjhgfdsa">
                     <div>
                         <label for="name">Name <abbr title="required">*</abbr></label>
-                        <input type="text" name="name" id="name" placeholder="Name" required>
+                        <input type="text" name="name" id="name" placeholder="Name" aria-required="true" required>
                     </div>
                     <div>
                         <label for="email">Email <abbr title="required">*</abbr></label>
-                        <input type="text" name="email" id="email" placeholder="Email" required>
+                        <input type="text" name="email" id="email" placeholder="Email" aria-required="true" required>
                     </div>
                     <div>
                         <label for="message">Message</label>
                         <textarea name="message" id="message" placeholder="Message"></textarea>
+                    </div>
+                    <div>
+                        <label for="file">File</label>
+                        <input type="file" name="file" id="file" accept="image/png, image/jpeg">
                     </div>
                     <div>
                         <input type="submit" value="Submit">
@@ -64,23 +96,23 @@
                 </form>
             </section>
         </main>
-        <aside>
-            <h2>Below are some key numbers and contacts at the Ancient Cedar Spa</h2>
-            <section>
+        <aside class="page-sidebar">
+            <h2 class="page-sidebar__title">Below are some key numbers and contacts at the Ancient Cedar Spa</h2>
+            <section class="sidebar-widget">
                 <h3>Phone</h3>
                 <address>
                     <a href="tel:+1-250-725-3100">1.250.725.3100</a><br>
                     <a href="tel:+1-800-333-4604">1.800.333.4604</a>
                 </address>
             </section>
-            <section>
+            <section class="sidebar-widget">
                 <h3>Fax</h3>
                 <address>
                     1.250.725.3129 - Administration<br>
                     1.250.725.3110 - For In-House Guests
                 </address>
             </section>
-            <section>
+            <section class="sidebar-widget">
                 <h3>Address</h3>
                 <address>
                     500 Osprey Lane at Chesterman Beach<br>
@@ -90,20 +122,47 @@
                 </address>
             </section>
         </aside>
-        <footer>
-            <h2>Find us on social media</h2>
-            <ul>
-                <li>
-                    <a href="https://www.facebook.com/WickInn/" target="_blank" title="facebook - Link opens in a new window">Facebook</a>
-                </li>
-                <li>
-                    <a href="https://twitter.com/wickinnbc" target="_blank" title="twitter - Link opens in a new window">Twitter</a>
-                </li>
-                <li>
-                    <a href="https://www.instagram.com/ancientcedarsspa/" target="_blank" title="instagram - Link opens in a new window">Instagram</a>
-                </li>
-            </ul>
-            <p>Copyright @2020 Ancient Cedars Spa. All rights reserved.</p>
+        <footer class="page-footer" aria-label="Footer">
+            <section class="footer-widget" aria-label="Find us on social media">
+                <h2 class="footer-widget__title">Find us on social media</h2>
+                <ul class="social-links">
+                    <li class="social-links_item">
+                        <a class="social-links_link" href="https://www.facebook.com/WickInn/" target="_blank" title="facebook - Link opens in a new window">Facebook</a>
+                    </li>
+                    <li class="social-links_item">
+                        <a class="social-links_link" href="https://twitter.com/wickinnbc" target="_blank" title="twitter - Link opens in a new window">Twitter</a>
+                    </li>
+                    <li class="social-links_item">
+                        <a class="social-links_link" href="https://www.instagram.com/ancientcedarsspa/" target="_blank" title="instagram - Link opens in a new window">Instagram</a>
+                    </li>
+                </ul>
+            </section>
+            <section class="footer-widget" aria-label="Report a problem or mistake on this page">
+                <details>
+                    <summary>
+                        Report a problem or mistake on this page
+                    </summary>
+                    <form action="/report-problem" method="post">
+                        <fieldset>
+                            <legend>Please select all that apply:</legend>
+                            <div>
+                                <label for="problem1">A link, button or video is not working</label>
+                                <input name="problem1" id="problem1" type="checkbox" value="Yes">
+                            </div>
+                            <div>
+                                <label for="problem2">It has a spelling mistake</label>
+                                <input name="problem2" id="problem2" type="checkbox" value="Yes">
+                            </div>
+                            <div>
+                                <label for="problem3">Information is missing</label>
+                                <input name="problem3" id="problem3" type="checkbox" value="Yes">
+                            </div>
+                        </fieldset>
+                        <button type="submit">Submit</button>
+                    </form>
+                </details>
+            </section>
+            <p class="copyright-text">Copyright @2020 Ancient Cedars Spa. All rights reserved.</p>
         </footer>
         <script src="js/script.js"></script>
     </body>

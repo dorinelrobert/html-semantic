@@ -14,44 +14,70 @@
         <script src="js/some-plugin.js"></script>
     </head>
     <body>
-        <a id="skip-to-content" href="#page-content">skip to main content</a>
-        <nav aria-label="Main Navigation">
-            <a href="index.html" rel="home">
-                <img src="images/logo.png" alt="Ancient Cedars Spa Logo">
+        <a class="skip-to-content" href="#page-content">skip to main content</a>
+        <nav class="navbar" aria-label="Main Navigation">
+            <a class="logo" href="index.html">
+                <img class="logo__img" src="images/logo.png" alt="Ancient Cedars Spa Logo">
             </a>
-            <ul role="menubar">
-                <li>
-                    <a href="index.html" role="menuitem" aria-current="page">Home</a>
+            <ul class="navbar__menu" id="main-menu" role="menubar">
+                <li class="navbar__item" role="none presentation">
+                    <a class="navbar__link" href="index.html" role="menuitem">Home</a>
                 </li>
-                <li>
-                    <a href="about.html" role="menuitem">About</a>
+                <li class="navbar__item" role="none presentation">
+                    <a class="navbar__link" href="about.html" role="menuitem">About</a>
                 </li>
-                <li>
-                    <a href="spa-packages.html" role="menuitem">Spa Packages</a>
+                <li class="navbar__item" role="none presentation">
+                    <a class="navbar__link" href="spa-packages.html" role="menuitem" aria-current="page">Spa Packages</a>
                 </li>
-                <li >
-                    <a href="contact.html" role="menuitem">Contact</a>
+                <li class="navbar__item" role="none presentation">
+                    <a class="navbar__link" href="contact.html" role="menuitem">Contact</a>
                 </li>
             </ul>
+            <button 
+		        class="navbar__menu-toggle" 
+		        aria-controls="main-menu" 
+		        aria-expanded="false" 
+		        aria-label="Click here to toggle the navigation menu">
+	    	    Menu
+	        </button>
+            <form class="search" action="/search-action" method="get" role="search" >
+                <input 
+                    class="search__text"
+                    id="search-text" 
+                    list="search-suggetions"  
+                    name="q" 
+                    type="search" 
+                    value="" 
+                    size="34" 
+                    maxlength="170" 
+                    placeholder="Search on Ancient Cedars Spa"
+                    aria-label="Search text">
+                <datalist id="search-suggetions">
+                    <option value="About Ancient Cedars Spa">About Ancient Cedars Spa</option>
+                    <option value="Spa Packages">Spa Packages</option>
+                    <option value="Contact">Contact</option>
+                    <option value="Treatments Prices">Treatments Prices</option>
+                    <option value="Treatments">Treatments</option>
+                </datalist>
+                <input class="search__btn" type="submit" value="Submit">
+            </form>
         </nav>
-        <header>
-            <h1>Rejuvenation Getaways</h1>
+        <header class="page-header" aria-labelledby="page-title">
+            <h1 class="page-header__title" id="page-title">Rejuvenation Getaways</h1>
         </header>
-        <main id="page-content" aria-label="Main Content">
-            <section>
-                <h2>Reserve Your Package</h2>
-                <p>
-                    Heal, soothe and treat yourself with one of our custom spa packages. Designed to 
-                    encapsulate a specific sensory journey, these collections of therapeutic and 
-                    invigorating experiences will ensure you find time to unplug and soak in every 
-                    moment during your stay.
-                </p>
-                <p>
-                    All packages can be booked directly anytime at <a href="tel:1-800-333-4604">1.800.333.4604</a> 
-                    (Canada &amp; USA) or <a href="tel:1-250-725-3100">1.250.725.3100</a> (Worldwide).
-                </p>
-            </section>
-            <article>
+        <main class="page-content" id="page-content" aria-label="Main Content">
+            <h2>Reserve Your Package</h2>
+            <p> 
+                Heal, soothe and treat yourself with one of our custom spa packages. Designed to 
+                encapsulate a specific sensory journey, these collections of therapeutic and 
+                invigorating experiences will ensure you find time to unplug and soak in every 
+                moment during your stay.
+            </p> 
+            <p>
+                All packages can be booked directly anytime at <a href="tel:1-800-333-4604">1.800.333.4604</a> 
+                (Canada &amp; USA) or <a href="tel:1-250-725-3100">1.250.725.3100</a> (Worldwide).
+            </p>
+            <article class="package">
                 <h3>Ancient Cedars Active Health</h3>
                 <p>
                     Revitalize and celebrate your whole health with this three-day package built for two people.
@@ -81,10 +107,10 @@
                     </p>
                 </footer>
             </article>
-            <article>
+            <article class="package">
                 <h3>Ancient Cedars Spa Package</h3>
                 <p>
-                    Time to cleanse your body and soul, and enjoy some “me” time at Ancient Cedars Spa. Wake up and 
+                    Time to cleanse your body and soul, and enjoy some &quot;me&quot; time at Ancient Cedars Spa. Wake up and 
                     loosen up with a semi-private (maximum five participants) Hatha yoga session. Indulge in a 
                     relaxing eucalyptus steam in our steam cave prior to your one-hour treatment.
                 </p>
@@ -111,11 +137,11 @@
                     </p>
                 </footer>
             </article>
-            <article>
+            <article class="package">
                 <h3>Discover Your Senses</h3>
                 <p>
                     With four days of pampering, this package focuses on the art of making it all about you. 
-                    If upon check-out you find yourself asking “Why am I leaving?”—consider yourself warned!
+                    If upon check-out you find yourself asking &quot;Why am I leaving?&quot; - consider yourself warned!
                 </p>
                 <h4>This package includes:</h4>
                 <ul>
@@ -152,20 +178,47 @@
                 </footer>
             </article>
         </main>
-        <footer>
-            <h2>Find us on social media</h2>
-            <ul>
-                <li>
-                    <a href="https://www.facebook.com/WickInn/" target="_blank" title="facebook - Link opens in a new window">Facebook</a>
-                </li>
-                <li>
-                    <a href="https://twitter.com/wickinnbc" target="_blank" title="twitter - Link opens in a new window">Twitter</a>
-                </li>
-                <li>
-                    <a href="https://www.instagram.com/ancientcedarsspa/" target="_blank" title="instagram - Link opens in a new window">Instagram</a>
-                </li>
-            </ul>
-            <p>Copyright @2020 Ancient Cedars Spa. All rights reserved.</p>
+        <footer class="page-footer" aria-label="Footer">
+            <section class="footer-widget" aria-label="Find us on social media">
+                <h2 class="footer-widget__title">Find us on social media</h2>
+                <ul class="social-links">
+                    <li class="social-links_item">
+                        <a class="social-links_link" href="https://www.facebook.com/WickInn/" target="_blank" title="facebook - Link opens in a new window">Facebook</a>
+                    </li>
+                    <li class="social-links_item">
+                        <a class="social-links_link" href="https://twitter.com/wickinnbc" target="_blank" title="twitter - Link opens in a new window">Twitter</a>
+                    </li>
+                    <li class="social-links_item">
+                        <a class="social-links_link" href="https://www.instagram.com/ancientcedarsspa/" target="_blank" title="instagram - Link opens in a new window">Instagram</a>
+                    </li>
+                </ul>
+            </section>
+            <section class="footer-widget" aria-label="Report a problem or mistake on this page">
+                <details>
+                    <summary>
+                        Report a problem or mistake on this page
+                    </summary>
+                    <form action="/report-problem" method="post">
+                        <fieldset>
+                            <legend>Please select all that apply:</legend>
+                            <div>
+                                <label for="problem1">A link, button or video is not working</label>
+                                <input name="problem1" id="problem1" type="checkbox" value="Yes">
+                            </div>
+                            <div>
+                                <label for="problem2">It has a spelling mistake</label>
+                                <input name="problem2" id="problem2" type="checkbox" value="Yes">
+                            </div>
+                            <div>
+                                <label for="problem3">Information is missing</label>
+                                <input name="problem3" id="problem3" type="checkbox" value="Yes">
+                            </div>
+                        </fieldset>
+                        <button type="submit">Submit</button>
+                    </form>
+                </details>
+            </section>
+            <p class="copyright-text">Copyright @2020 Ancient Cedars Spa. All rights reserved.</p>
         </footer>
         <script src="js/script.js"></script>
     </body>
